@@ -1,0 +1,18 @@
+<p>
+  details works!
+</p>
+<h3>Pet Name:</h3> <h4>{{pet.name}}</h4>
+<h3>Pet type:</h3> <h4>{{pet.type}}</h4>
+<h3>About {{pet.name}}:</h3> <h4>{{pet.description}}</h4>
+<div>
+  <p>Skills:</p>
+  <p>{{pet.skill1}}</p>
+  <p>{{pet.skill2}}</p>
+  <p>{{pet.skill3}}</p>
+
+  <p>Likes: {{pet.likes}}</p>
+
+</div>
+<button *ngIf="seeLike"  (click)="likePet()">Like {{pet.name}}</button> | 
+<button  [routerLink]="['/pets']" >Close {{pet.name}}</button> | 
+<button (click)="destroyPet()" >Destroy {{pet.name}}</button>

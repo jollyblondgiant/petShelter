@@ -1,0 +1,23 @@
+<p>
+  edit works!
+</p>
+
+<form (submit)="updatePet()">
+  
+    <input [(ngModel)]="editPet.name" placeholder="{{editPet.name}}" name = "editPet.name" required minlength ="3"><br/>
+    <input [(ngModel)]="editPet.type" placeholder="{{editPet.type}}" name = "editPet.type" required minlength ="3"><br/>
+    <input [(ngModel)]="editPet.description" placeholder="{{editPet.description}}" name = "editPet.description" required minlength ="3"><br/>
+    
+    <p>Update Skills?</p>
+    <input [(ngModel)]="editPet.skill1" placeholder="{{editPet.skill1}}" name = "editPet.skill1"/><br/>
+    <input [(ngModel)]="editPet.skill2" placeholder="{{editPet.skill2}}" name = "editPet.skill2"/><br/>
+    <input [(ngModel)]="editPet.skill3" placeholder="{{editPet.skill3}}" name = "editPet.skill3"/><br/>
+    <input type="submit" value="Update"/>
+    <button [routerLink]="['/pets']" >Cancel</button>
+  </form>
+    
+    <div id="errors" *ngIf="errorMessage.length" >
+            <p *ngFor="let x of errorMessage" >{{x}}</p>
+          
+          </div>
+    

@@ -1,0 +1,22 @@
+<p>
+  pets works!
+</p>
+ 
+<button [routerLink]="['/new']" >Add a new Pet</button>
+
+<table>
+  <tr>
+    <th>Pet</th>
+    <th>Type</th>
+    <th>Actions Available</th>
+  </tr>
+  <tr *ngFor="let pet of pets" >
+    
+    <td ><h4>{{pet.name}}</h4></td>
+    <td><h4>{{pet.type}}</h4></td>
+    <td>
+      <button  [routerLink]="[pet._id]" >Details</button> |
+      <button  [routerLink]="[pet._id, 'edit']" >Edit</button> 
+    </td>
+  </tr>
+</table>

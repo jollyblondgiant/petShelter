@@ -1,0 +1,21 @@
+<p>
+  Know of a pet that needs a home?
+</p>
+
+<form (submit)="createPet()">
+  
+  <input [(ngModel)]="newPet.name" placeholder="What's your pet's name?" name = "newPet.name" required minlength ="3"><br/>
+  <input [(ngModel)]="newPet.type" placeholder="What kind of pet is your pet?" name = "newPet.type" required minlength ="3"/><br/>
+  <input [(ngModel)]="newPet.description" placeholder="Tell us about your pet:" name = "newPet.description" required minlength ="3"/><br/>
+  <p>Does your pet have any skills?</p>
+  <input [(ngModel)]="newPet.skill1" placeholder="optional" name = "newPet.skill1"/><br/>
+  <input [(ngModel)]="newPet.skill2" placeholder="optional" name = "newPet.skill2"/><br/>
+  <input [(ngModel)]="newPet.skill3" placeholder="optional" name = "newPet.skill3"/><br/>
+  <button [routerLink]="['/pets']" >Cancel</button>
+  <input type="submit" value="Submit"/>
+  </form>
+
+  <div id="errors" *ngIf="errorMessage.length" >
+    <p *ngFor="let x of errorMessage" >{{x}}</p>
+  
+  </div>
